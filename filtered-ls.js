@@ -1,13 +1,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const folder = process.argv[2];
-const ext = '.' + process.argv[3];
+const directory = process.argv[2];
+const extension = '.' + process.argv[3];
 
-fs.readdir(folder, function (err, files) {
+fs.readdir(directory, function (err, files) {
     if (err) return console.error(err)
     files.forEach(function (file) {
-        if (path.extname(file) === ext) {
+        if (path.extname(file) === extension) {
             console.log(file)
         }
     })
@@ -15,10 +15,10 @@ fs.readdir(folder, function (err, files) {
 
 // 2 Example
 // const directory = process.argv[2];
-// const filetype = "." + process.argv[3];
+// const extension = "." + process.argv[3];
 //
-// fs.readdir( directory , (err, ls) => {
+// fs.readdir( directory , (err, list) => {
 //     if(err) throw err;
-//     const filteredLs = ls.filter(entry => path.extname(entry) == filetype );
-//     filteredLs.forEach(filename => console.log(filename));
+//     const filteredList = list.filter(entry => path.extname(entry) == extension );
+//     filteredList.forEach(filename => console.log(filename));
 // });
