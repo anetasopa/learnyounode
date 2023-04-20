@@ -11,5 +11,3 @@ const callback = (err, list) => {
         list.forEach(file => console.log(file));
     }
 }
-
-mymodule(directory, filterExtension, callback);
